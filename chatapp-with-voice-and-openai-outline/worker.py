@@ -1,12 +1,13 @@
 import openai
 import requests
+from Settings import API_KEY, API_URL
 
-openai.api_key = "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"
+openai.api_key = API_KEY
 
 
 def speech_to_text(audio_binary):
     # Set up Watson Speech to Text HTTP Api url
-    base_url = 'https://sn-watson-stt.labs.skills.network'
+    base_url = API_URL
     api_url = base_url+'/speech-to-text/api/v1/recognize'
     
     # Set up parameters for our HTTP request
